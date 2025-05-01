@@ -9,8 +9,8 @@ Our AI Travel Planner is a smart travel assistant designed to help users organiz
   Get personalized suggestions for destinations, hotels, and activities
 - **Real-Time Budget Tracking** 💰  
   Set budgets and monitor expenses with currency conversion
-- **Smart Itinerary Builder** 📅  
-  Calendar integration for scheduling
+- **Interest-Based Quiz** 📅  
+  Let us know what you are interested in for the best recommendations
 - **Interactive Travel Map** 🗺️  
   GPS integration with points of interest visualization
 - **Collaborative Planning** 👥  
@@ -32,7 +32,7 @@ Our AI Travel Planner is a smart travel assistant designed to help users organiz
 ## Help 🆘
 
 - Q: AI recommendations failing?
-✅ Verify Xenova model loading in browser console
+✅ Verify Gemini model loading in browser console
 ✅ Check network requests for errors
 
 ## Authors ✍️
@@ -48,10 +48,9 @@ Our AI Travel Planner is a smart travel assistant designed to help users organiz
 
 ## APIs/Technologies Used 🛠️
                                
-- OpenStreetMap	      
-- Google Calendar API	        	
-- Xenova GPT-2	        	            
-- Yahoo Finance API	            
+- Leaflet Library	             	
+- Google Gemini        	            
+- GitHub Pages            
 
 ## Version History
 
