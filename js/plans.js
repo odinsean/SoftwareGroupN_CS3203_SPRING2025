@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function displayChecklistInModal() {
         const checklistData = getChecklistData();
-        const checklistOutput = checklistData.map(item => `${item.checked ? '✓' : '◻'} ${item.text}`).join('\n');
+        const checklistOutput = checklistData.map(item => `${item.checked ? "[X]" : "[ ]"} ${item.text}`).join('\n');
         checklistPreview.textContent = checklistOutput || "No items in checklist.";
     }
 
@@ -138,6 +138,48 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 50);
             savePlansToStorage()
         });
+
+        const exportBtn = document.createElement("button");
+        exportBtn.className = "export-button";
+        exportBtn.innerText = "Export";
+        exportBtn.addEventListener("click", async () => {
+            const { jsPDF } = window.jspdf;
+
+            const originalTitle = titleDiv.innerText;
+            const checklistText = card.dataset.checklist;
+            const originalInterests = card.dataset.interests;
+        
+            const doc = new jsPDF();
+            doc.addFont("NotoSans-VariableFont_wdth,wght");
+            let y = 10;
+        
+            doc.setFontSize(36);
+            const pageWidth = doc.internal.pageSize.getWidth();      // e.g. 210 for A4
+            const textWidth = doc.getTextWidth(originalTitle);       // dynamic width of the title
+            const x = (pageWidth - textWidth) / 2;                    // horizontal center
+            doc.text(`${originalTitle}`, x, y);
+            y += 15;
+        
+            doc.setFontSize(24);
+            doc.text("Checklist:", 10, y);
+            y += 8;
+
+            // Split the checklist text into individual lines
+            const checklistItems = checklistText.split("\n");
+
+            doc.setFontSize(14);
+            checklistItems.forEach(item => {
+                doc.text(item, 10, y);
+                y += 8;
+            });
+        
+            y += 5;
+            doc.setFontSize(14);
+            doc.text(`${originalInterests}`, 10, y);
+        
+            // Save the PDF
+            doc.save(`${originalTitle}.pdf`);
+        })
         
 
         const deleteBtn = document.createElement("button");
@@ -161,6 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
         card.appendChild(titleDiv);
         card.appendChild(viewBtn);
         card.appendChild(copyBtn);
+        card.appendChild(exportBtn);
         card.appendChild(deleteBtn);
         
         return card;
