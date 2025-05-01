@@ -65,6 +65,17 @@ button {
     border-radius: 5px;
 }
 
+.export-button {
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 .delete-button {
     background-color: transparent;
     border: none;
