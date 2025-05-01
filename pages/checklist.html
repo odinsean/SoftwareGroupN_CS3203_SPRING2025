@@ -115,12 +115,14 @@
     // Simple encryption functions
     const SHIFT = 5;  // Change this number for different obfuscation
 
+    // function for encrypting the checklist item
     function simpleEncrypt(text) {
       return text.split('').map(char => 
         String.fromCharCode(char.charCodeAt(0) + SHIFT)
       ).join('');
     }
 
+    // function for decrypting the checklist item
     function simpleDecrypt(text) {
       return text.split('').map(char => 
         String.fromCharCode(char.charCodeAt(0) - SHIFT)
@@ -128,7 +130,7 @@
     }
 
     
-
+    // function for creating the list item
     function createListItem(text = '', checked = false) {
       const id = Date.now().toString(); // Unique ID
       const li = document.createElement('li');
@@ -140,6 +142,7 @@
       return li;
     }
 
+    // function to add items to the list
     function addItem() {
       const input = document.getElementById('newItem');
       const checklist = document.getElementById('checklist');
@@ -151,18 +154,20 @@
       }
     }
 
+    // function to delete, then save the checklist's new items
     function deleteItem(element) {
       element.parentElement.remove();
       saveChecklist();
     }
 
+    // function to remove all the item's in checklist from the localStorage
     function resetChecklist() {
       const checklist = document.getElementById('checklist');
       checklist.innerHTML = '';
       localStorage.removeItem('checklist');
     }
 
-    // Modified save/load functions
+    // Modified save/load functions to account for the encryption
     function saveChecklist() {
       const items = Array.from(document.querySelectorAll('.checklist li')).map(li => ({
         text: li.querySelector('input[type="text"]').value,
