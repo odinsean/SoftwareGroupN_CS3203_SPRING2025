@@ -75,6 +75,7 @@
     <script src="../js/MoneyPlan.js"></script>
 
     <script>
+       /* stores user Budget amount to be used for the dropbox box */
     document.addEventListener("DOMContentLoaded", () => {
         const savedBudget = localStorage.getItem("travelBudget") || "0";
         document.getElementById("originalBudget").textContent = `${savedBudget} USD`;
