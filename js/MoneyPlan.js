@@ -26,12 +26,12 @@ createMoneyPlan() {
         }
 
          let exchangeRates = { // These are the currceny exchange rates for the different types of currency
-            "USD": { "EURO": 0.92, "JPY": 148.34, "RUBLE": 87.20, "RENMINBI": 7.26, "SKW": 1451.17 },
-            "EURO": { "USD": 1.09, "JPY": 161.98, "RUBLE": 95.22, "RENMINBI": 7.93, "SKW": 1584.87 },
-            "JPY": { "USD": 0.0067, "EURO": 0.0062, "RUBLE": 0.59, "RENMINBI": 0.049, "SKW": 9.78 },
-            "RUBLE": { "USD": 0.011, "EURO": 0.011, "JPY": 1.70, "RENMINBI": 0.084, "SKW": 16.70 },
-            "RENMINBI": { "USD": 0.14, "EURO": 0.13, "JPY": 20.42, "RUBLE": 11.97, "SKW": 199.87 },
-            "SKW": { "USD": 0.00069, "EURO": 0.00063, "JPY": 0.10, "RENMINBI": 0.0050, "RUBLE": 0.060 }
+            "USD": { "EURO": 0.88, "JPY": 144.53, "RUBLE": 82.75, "RENMINBI": 7.27, "SKW": 1395.40 },
+            "EURO": { "USD": 1.13, "JPY": 163.63, "RUBLE": 93.64, "RENMINBI": 8.23, "SKW": 1578.40 },
+            "JPY": { "USD": 0.0069, "EURO": 0.0061, "RUBLE": 0.57, "RENMINBI": 0.050, "SKW": 9.65 },
+            "RUBLE": { "USD": 0.012, "EURO": 0.011, "JPY": 1.75, "RENMINBI": 0.088, "SKW": 17.18 },
+            "RENMINBI": { "USD": 0.14, "EURO": 0.12, "JPY": 19.89, "RUBLE": 11.38, "SKW": 192.04 },
+            "SKW": { "USD": 0.00072, "EURO": 0.00063, "JPY": 0.10, "RENMINBI": 0.0052, "RUBLE": 0.058 }
         };
 
         if (!exchangeRates[this.currentCurrency] || !exchangeRates[this.currentCurrency][this.newCurrency]) {
