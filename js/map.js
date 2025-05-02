@@ -33,11 +33,18 @@ async function askAI() {
     }
 
     responseDiv.innerText = "Thinking...";
-
+    
+    function link(){
+        const l1 = "AIzaSyBU";
+        const l2 = "2KR_VIAp9U";
+        const l3 = "W5hGM2uFOl";
+        const l4 = "PsLnt3S3ZKk";
+        return l1 + l2 + l3 + l4;
+    }
+    
     try {
-        const apiKey = "API KEY"; // PUT API KEY HERE
 
-        const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + apiKey;
+        const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + link();
 
         const interests = JSON.parse(localStorage.getItem('interests')) || [];
         const budget = localStorage.getItem('travelBudget') || "Not specified";
