@@ -18,7 +18,8 @@ Our AI Travel Planner is a smart travel assistant designed to help users organiz
 - **Collaborative Planning** 👥  
   Share and edit plans
 - **Language Translation** 🌐
-  Translate from English to our supported languages (German, French, Spanish, and more!)
+- Translate from English to our supported languages (German, French, Spanish, and more!)
+  
 
 ## Getting Started 🚀
 
