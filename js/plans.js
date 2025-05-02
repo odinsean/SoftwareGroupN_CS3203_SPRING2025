@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
 
         const copyBtn = document.createElement("button");
-        copyBtn.className = "copy-button";
+        copyBtn.className = "view-button";
         copyBtn.innerText = "Copy";
         copyBtn.addEventListener("click", () => {
             const beforeCount = document.querySelectorAll('.plan-card:not(.add-plan-card)').length;
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         const exportBtn = document.createElement("button");
-        exportBtn.className = "export-button";
+        exportBtn.className = "view-button";
         exportBtn.innerText = "Export";
         exportBtn.addEventListener("click", async () => {
             const { jsPDF } = window.jspdf;
